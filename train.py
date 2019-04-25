@@ -168,6 +168,7 @@ def main(args):
             if iteration % print_freq == 0:
                 temp = "train loss: %0.5f "%loss.item()
                 temp += "| smoothed loss %0.5f "%losses.avg
+                log["log"].append({"iteration":iteration,"epoch":epoch,"loss":losses.avg})
                 print(iteration,temp)
                 losses = AverageMeter()
                 
