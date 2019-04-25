@@ -90,7 +90,7 @@ I parepared random 50 images for face and anime. See `./data` directory.
 - face images are from [Flickr-Faces-HQ Dataset](https://github.com/NVlabs/ffhq-dataset)
 - anime images are from [Danbooru-2017](https://www.gwern.net/Danbooru2018)
 
-If you want to add your own dataset, check 'dataloaders/setup_dataloader_smallgan.py' and add it.
+If you want to add your own dataset, check `dataloaders/setup_dataloader_smallgan.py` and add it.
 
 ## Disclaimer
 I just check the results visually and don't check the evaluation scores (KMMD and Mean Variance). If you need complete reproduction, you should use [author's one](https://github.com/nogu-atsu/SmallGAN). Honestly, the visual quality looks worse than the originally reported ones. Anther difference is that this repository uses BigGAN for 128x128 but author uses BigGAN for 256x256 and SNGAN for 128x128. 
