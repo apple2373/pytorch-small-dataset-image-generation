@@ -24,14 +24,21 @@ python train.py --dataset anime --gpu 0 --pretrained ./data/G_ema.pth
 
 ## Sample Reconstruction Results
 ### Anime Face
-reconstruction
-random
-interpolation
+reconstruction   
+![](./samples/anime_reconstruct.jpg)   
+random   
+![](./samples/anime_random.jpg)     
+interpolation  
+![](./samples/anime_interpolate.jpg)       
+
 
 ### Real Face
-reconstruction
-random
-interpolation
+reconstruction   
+![](./samples/face_reconstruct.jpg)   
+random   
+![](./samples/face_random.jpg)     
+interpolation  
+![](./samples/face_interpolate.jpg)       
 
 ## Comments
 I found it's important to tune hyper-parameters correctly. Basically there are give types of layers that are tuned. You can set learning rate for each of them individually.
