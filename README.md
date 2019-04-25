@@ -9,7 +9,7 @@ pytorch re-implementation of Image Generation from Small Datasets via Batch Stat
 pytorch 1.0
 python 3.6
 ```
-see `env.yml` for the exact environment I used.
+see [`env.yml`](./env.yml) for the exact environment I used.
 
 You will also need ImageNet pretrained 128 x 128 BigGAN weights from the BigGAN [author's repository](https://github.com/ajbrock/BigGAN-PyTorch). 
 
