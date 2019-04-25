@@ -41,7 +41,7 @@ interpolation
 ![](./samples/face_interpolate.jpg)       
 
 ## Comments
-I found it's important to tune hyper-parameters correctly. Basically there are give types of layers that are tuned. You can set learning rate for each of them individually.
+I found it's important to tune hyper-parameters correctly. Basically there are five types of layers that are tuned. You can set learning rate for each of them individually.
 
 - Linear layer to generate batch norm scale and bias in the original generator.
 ```
