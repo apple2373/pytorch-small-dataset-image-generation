@@ -2,7 +2,7 @@
 
 pytorch re-implementation of Image Generation from Small Datasets via Batch Statistics Adaptation
 - https://arxiv.org/abs/1904.01774
-- https://github.com/nogu-atsu/pytorch-small-dataset-image-generation
+- https://github.com/nogu-atsu/small-dataset-image-generation
 
 ## Requirements
 ```
@@ -93,7 +93,7 @@ I parepared random 50 images for face and anime. See `./data` directory.
 If you want to add your own dataset, check `dataloaders/setup_dataloader_smallgan.py` and add it.
 
 ## Disclaimer
-I just check the results visually and don't check the evaluation scores (KMMD and Mean Variance). If you need complete reproduction, you should use [author's one](https://github.com/nogu-atsu/pytorch-small-dataset-image-generation). Honestly, the visual quality looks worse than the originally reported ones. Anther difference is that this repository uses BigGAN for 128x128 but author uses BigGAN for 256x256 and SNGAN for 128x128. 
+I just check the results visually and don't check the evaluation scores (KMMD and Mean Variance). If you need complete reproduction, you should use [author's one](https://github.com/nogu-atsu/small-dataset-image-generation). Honestly, the visual quality looks worse than the originally reported ones. Anther difference is that this repository uses BigGAN for 128x128 but author uses BigGAN for 256x256 and SNGAN for 128x128. 
 
 ## Acknowledgement
 I'd like to Thank [Atsuhiro Noguchi ](https://github.com/nogu-atsu/) for the help via personal email as well as the open sourced code, [Minjun Li](https://github.com/minjunli) for helpful discussion and anime dataset preparation. 
