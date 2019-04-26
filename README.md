@@ -1,4 +1,4 @@
-# PyTorch-SmallGAN
+#  Small dataset image generation with PyTorch
 
 pytorch re-implementation of Image Generation from Small Datasets via Batch Statistics Adaptation
 - https://arxiv.org/abs/1904.01774
