@@ -9,6 +9,7 @@ from torch.optim import lr_scheduler
 
 # imports from my own script
 from utils import gpu_setup,savedir_setup,save_args,save_json,check_githash,save_checkpoint
+import visualizers
 from metrics.AverageMeter import AverageMeter
 from dataloaders.setup_dataloader_smallgan import setup_dataloader 
 from models.setup_model import setup_model
@@ -56,21 +57,10 @@ def argparse_setup():
 
 
 
-def generate_samples(model,out_path,batch_size):
-    model.eval()
-    device = next(model.parameters()).device
-    dataset_size = model.embeddings.weight.size()[0]
-    indices = torch.randperm(dataset_size,device=device)[0:batch_size]
-    embeddings = model.embeddings(indices)
-    embeddings_eps = torch.randn(embeddings.size(),device=device)*0.01
-    image_tensors = model(embeddings+embeddings_eps)
-    with torch.no_grad():
-        torchvision.utils.save_image(
-            image_tensors,
-            out_path,
-            nrow=int(batch_size ** 0.5),
-            normalize=True,
-        )
+def generate_samples(model,img_prefix,batch_size):
+    visualizers.reconstruct(model,img_prefix+"reconstruct.jpg",torch.arange(batch_size),True)
+    visualizers.interpolate(model,img_prefix+"interpolate.jpg",source=0,dist=1,trncate=0.3, num=7)
+    visualizers.random(model,img_prefix+"random.jpg",tmp=0.3, n=9, truncate=True)
 
 def setup_optimizer(model,lr_g_batch_stat,lr_g_linear,lr_bsa_linear,lr_embed,lr_class_cond_embed,step,step_facter=0.1):
     #group parameters by lr
@@ -173,8 +163,8 @@ def main(args):
                 losses = AverageMeter()
                 
             if iteration%eval_freq==0 and iteration>0:
-                out_path = os.path.join(checkpoint_dir,"%d_recon.jpg"%iteration) 
-                generate_samples(model,out_path,dataloader.batch_size)
+                img_prefix = os.path.join(checkpoint_dir,"%d_"%iteration) 
+                generate_samples(model,img_prefix,dataloader.batch_size)
                 
             if iteration%save_freq==0 and iteration>0:
                 save_checkpoint(checkpoint_dir,device,model,iteration=iteration )
