@@ -22,6 +22,9 @@ Unzip it, and put `G_ema.pth` to `./data/`
 python train.py --dataset anime --gpu 0 --pretrained ./data/G_ema.pth
 ```
 
+Thanks to [ak9250](https://github.com/ak9250), we also have notebook to run on Google Colaboratory.
+See [`SmallGan.ipynb`]('./SmallGan.ipynb') 
+
 ## Sample Reconstruction Results
 ### Anime Face
 reconstruction   
